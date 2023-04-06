@@ -5,6 +5,8 @@
 {% block body %}
     <h2>{{ conference }} Conference</h2>
 
+    {# <p>{{ conference.slug }}</p> #}
+
     {% if comments|length > 0 %}
         <div>There are {{ comments|length}} comments.</div>
 
@@ -22,11 +24,13 @@
         {% endfor %}
 
         {% if previous >= 0 %}
-            <a href="{{ path('conference', { id: conference.id, offset: previous }) }}">Previous</a>
+            {# <a href="{{ path('conference', { id: conference.id, offset: previous }) }}">Previous</a> #}
+            <a href="{{ path('conference', { slug: conference.slug, offset: previous }) }}">Previous</a>
         {% endif %}
 
         {% if next < comments|length %}
-            <a href="{{ path('conference', { id: conference.id, offset: next }) }}">Next</a>
+            {# <a href="{{ path('conference', { id: conference.id, offset: next }) }}">Next</a> #}
+            <a href="{{ path('conference', { slug: conference.slug, offset: next }) }}">Next</a>
         {% endif %}
 
     {% else %}

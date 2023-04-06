@@ -25,7 +25,7 @@ when@test:
 
 when@prod:
     doctrine:
-        schema_filter: ~^(?!session)~   # pour que Doctrine ne supprime pas la table sessions
+        #schema_filter: ~^(?!session)~   # pour que Doctrine ne supprime pas la table sessions
         orm:
             auto_generate_proxy_classes: false
             proxy_dir: '%kernel.build_dir%/doctrine/orm/Proxies'
